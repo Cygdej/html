@@ -6,10 +6,11 @@ const timerEl = document.querySelector("span");
 // который будет анимировать timerEl
 const createTimerAnimator = () => {
   return (seconds) => {
+    const { hours, minutes, sec } = convertSeconds(seconds);
+    timerEl.innerHTML = `${hours}h:${minutes}m:${sec}s`;
+    seconds--;
     timer = setInterval(() => {
-      const hours = Math.floor(seconds / 3600);
-      const minutes = Math.floor(seconds / 60) % 60;
-      const sec = seconds % 60;
+      const { hours, minutes, sec } = convertSeconds(seconds);
       timerEl.innerHTML = `${hours}h:${minutes}m:${sec}s`;
       if (seconds == 0) {
         clearInterval(timer);
@@ -40,3 +41,11 @@ buttonEl.addEventListener("click", () => {
 
   inputEl.value = "";
 });
+
+function convertSeconds(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor(seconds / 60) % 60;
+  const sec = seconds % 60;
+
+  return { hours, minutes, sec };
+}
