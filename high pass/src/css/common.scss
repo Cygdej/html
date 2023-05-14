@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Bold"),
+    url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2"),
+    url("../fonts/Roboto/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Regular"),
+    url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: local("TTFirsNeue-Bold"),
+    url("../fonts/TT Firs Neue/TTFirsNeue-Bold.woff2") format("woff2"),
+    url("../fonts/TT Firs Neue/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: local("TTFirsNeue-Regular"),
+    url("../fonts/TT Firs Neue/TTFirsNeue-Regular.woff2") format("woff2"),
+    url("../fonts/TT Firs Neue/TTFirsNeue-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: $main-color;
+  font-family: serif;
+}
+
+.container {
+  max-width: 1352px;
+  margin: 0 auto;
+  padding: 0 31px;
+}
+
+.logo {
+  width: 190px;
+  height: 31px;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.orange-btn {
+  padding: 16px 21px;
+  font-family: "Roboto";
+  font-weight: 700;
+  color: $main-color;
+  background-color: $orange-btn-bg;
+  transition: background-color 0.1s ease-in-out;
+  &:hover {
+    background-color: $text-focus-bg;
+  }
+
+  &:focus {
+    border: 3px solid $text-focus-bg;
+  }
+
+  &:active {
+    border: none;
+    background-color: $text-active-color;
+  }
+}
+
+.hash {
+  padding: 6px 14px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 14px;
+  color: $main-color;
+  background-color: $black-cover;
+}
+
+.section-title-dark {
+  @include section-title;
+  color: $black-cover;
+}
+
+.section-title-light {
+  @include section-title;
+  color: $main-color;
+}
+
+.card-title-dark {
+  @include card-title;
+  color: $black-cover;
+}
+
+.card-title-light {
+  @include card-title;
+  color: $main-color;
+}
+
+.text-lh-28 {
+  @include text;
+  line-height: 28px;
+}
+
+.text-lh-22 {
+  @include text;
+  line-height: 22px;
+}
+
+.input {
+  @include input-reset;
+  @include input-interaction;
+  padding: 16px 20px;
+  font-size: 16px;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  color: $orange-btn-bg;
+  font-size: 16px;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logo {
+    width: 166px;
+    height: 27px;
+  }
+
+  .tel {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .container {
+    padding: 0 27px;
+  }
+  .section-title-dark {
+    font-size: 26px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 21px;
+  }
+
+  .logo {
+    width: 112px;
+    height: 18px;
+  }
+
+  .hash {
+    font-size: 12px;
+  }
+
+  .orange-btn {
+    padding: 11px 23px;
+    font-size: 14px;
+  }
+
+  .section-title-dark,
+  .section-title-light {
+    font-size: 21px;
+    line-height: 22px;
+  }
+
+  .card-title-dark,
+  .card-title-light {
+    font-size: 21px;
+    line-height: 22px;
+  }
+
+  .input {
+    padding: 12px 23px;
+  }
+}

@@ -1,0 +1,255 @@
+.header {
+  padding: 25px 0;
+  background-color: $black-cover;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 140px;
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    font-family: "TT Firs Neue";
+    font-weight: 400;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 79px;
+    }
+
+    a {
+      @include link-reset;
+      @include text-interaction;
+      color: $main-color;
+      font-size: 16px;
+      transition: color 0.1s ease-in-out;
+    }
+  }
+
+  &__tel {
+    display: none;
+  }
+
+  &__search-form {
+    position: relative;
+    height: 25px;
+    margin-left: auto;
+  }
+
+  &__search-input {
+    @include input-reset;
+    position: absolute;
+    padding: 0;
+    width: 0;
+    visibility: hidden;
+    height: 25px;
+    background-color: $black-cover;
+    z-index: 10;
+    color: $main-color;
+    border-bottom: 1px solid $light-text;
+    transition: border-color 0.1s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: $orange-btn-bg;
+    }
+
+    &:focus-visible {
+      border-color: $text-active-color;
+    }
+
+    &:focus-visible::placeholder {
+      color: $light-input-bg;
+    }
+  }
+
+  button {
+    @include button-reset;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    background-color: transparent;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__search-close {
+    display: none;
+    position: absolute;
+    right: 0;
+  }
+
+  #open-burger {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .header {
+    padding: 25px 0;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 33px;
+      }
+    }
+    &__logo {
+      margin-right: 80px;
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .header {
+    position: relative;
+    &__logo {
+      margin-right: 0;
+    }
+
+    &__nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $dark-input-bg;
+      width: 100%;
+      padding: 13px 27px;
+    }
+
+    &__list {
+      justify-content: space-between;
+    }
+    &__item:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 22px 0;
+    &__nav {
+      height: 45px;
+      padding-top: 14px;
+      padding-left: 21px;
+      padding-bottom: 13px;
+    }
+
+    &__list {
+      z-index: 100;
+      position: absolute;
+      flex-direction: column;
+      justify-content: normal;
+      height: 100vh;
+      width: 100%;
+      left: 0;
+      top: -1px;
+      padding-top: 60px;
+      padding-left: 21px;
+      padding-bottom: 36px;
+      background-color: $black-cover;
+    }
+
+    &__tel {
+      z-index: 1000;
+      position: absolute;
+      display: block;
+      top: calc(100vh - 136px);
+    }
+
+    &__burger-container {
+      position: relative;
+      z-index: 1000;
+      height: 100%;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &__burger {
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background-color: $main-color;
+      transition: transform 0.2s ease-in-out;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background-color: $main-color;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &::before {
+        top: -6px;
+        width: 100%;
+      }
+
+      &::after {
+        top: 6px;
+        width: 50%;
+      }
+    }
+
+    #open-burger:checked ~ &__burger-container {
+      padding: 3px;
+      background-color: $dark-input-bg;
+      border-radius: 50%;
+    }
+
+    #open-burger:checked + &__burger-container &__burger::after {
+      display: none;
+    }
+
+    #open-burger:checked + &__burger-container &__burger::before {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    #open-burger:checked + &__burger-container &__burger {
+      transform: rotate(-45deg) scale(0.75);
+    }
+
+    #open-burger ~ &__list {
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 0.25s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #open-burger ~ &__tel {
+      transform: translateX(-100vw);
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #open-burger:checked ~ &__list {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    #open-burger:checked ~ .header__tel {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &__item:not(:last-child) {
+      margin-bottom: 33px;
+    }
+
+    &__search-form {
+      button {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

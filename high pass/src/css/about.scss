@@ -1,0 +1,146 @@
+.about {
+  padding-top: 30px;
+  padding-bottom: 70px;
+  background-color: $black-cover;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &-camera-bg {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 33px;
+        width: 100%;
+        height: 64%;
+        background-image: url(../img/camera-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__descr {
+    color: $main-color;
+  }
+
+  &__form {
+    margin-top: auto;
+
+    &-title {
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 474px;
+      margin-right: 26px;
+      color: $light-text;
+      background-color: $dark-input-bg;
+    }
+
+    button {
+      @include button-reset;
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .about {
+    &__form {
+      input {
+        width: 342px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .about {
+    padding-bottom: 90px;
+
+    &__content {
+      &-camera-bg::before {
+        height: 62%;
+      }
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+    &__form {
+      &-title {
+        margin-bottom: 10px;
+      }
+
+      input {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .about {
+    padding-bottom: 63px;
+    &__form {
+      padding-bottom: 7px;
+
+      input {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .about {
+    &__content-camera-bg::before {
+      background-image: url(../img/camera-bg-342x569.png);
+      height: 70%;
+    }
+    &__form {
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    &__descr {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .about {
+    & .container .grid {
+      gap: 18px;
+    }
+    &__content {
+      &-camera-bg::before {
+        background-image: url(../img/camera-bg-278x278.png);
+        height: 278px;
+        top: 0;
+      }
+      &.about__content-camera-bg {
+        height: 440px;
+      }
+    }
+
+    &__form {
+      padding: 0;
+    }
+  }
+}
