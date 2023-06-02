@@ -2,11 +2,11 @@ import gulp from "gulp";
 import babel from "gulp-babel";
 import GulpCleanCss from "gulp-clean-css";
 import { deleteAsync } from "del";
-// import browserSync from "browser-sync";
 import svgSprite from "gulp-svg-sprite";
 import GulpImage from "gulp-image";
 import htmlmin from "gulp-htmlmin";
 import gutil from "gulp-util";
+import browserSync from "browser-sync";
 import gulpSourcemaps from "gulp-sourcemaps";
 import concat from "gulp-concat";
 import uglify from "gulp-uglify-es";
@@ -61,7 +61,8 @@ function stylesCss() {
   return gulp
     .src(paths.styles.src.css)
     .pipe(GulpCleanCss({ level: 2 }))
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.stream());
 }
 
 function stylesSass() {
@@ -71,7 +72,8 @@ function stylesSass() {
     .pipe(sasss({ outputStyle: "compressed" }).on("error", sasss.logError))
     .pipe(postcss([autoprefixer(), cssnanoPlugin()]))
     .pipe(gulpSourcemaps.write("."))
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -91,7 +93,8 @@ function scripts() {
       // : gutil.noop()
     )
     .pipe(gulpSourcemaps.write("."))
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(browserSync.stream());
 }
 
 function images() {
@@ -128,10 +131,17 @@ function htmlMinify() {
         collapseWhitespace: true,
       })
     )
-    .pipe(gulp.dest(paths.html.dest));
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(browserSync.stream());
 }
 
 function watch() {
+  browserSync.init({
+    server: {
+      baseDir: "app",
+    },
+  });
+
   gulp.watch(paths.html.src, htmlMinify);
   gulp.watch(paths.styles.src.css, stylesCss);
   gulp.watch(paths.styles.src.sass, stylesSass);

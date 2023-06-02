@@ -11,6 +11,7 @@
 
     img {
       width: 100%;
+      object-fit: contain;
       height: 100%;
     }
 
@@ -42,11 +43,10 @@
       content: "";
       display: block;
       position: absolute;
-      bottom: -30px;
+      bottom: -27px;
       height: 11px;
       width: 100%;
-      transform: scaleY(-1);
-      background-image: url(../img/curve.png);
+      background-image: url(../img/curve.svg);
       background-repeat: repeat no-repeat;
     }
   }
@@ -90,7 +90,7 @@
       margin-right: 8px;
       fill: transparent;
 
-      & > * {
+      & g > * {
         transition: fill 0.1s ease-in-out;
       }
     }

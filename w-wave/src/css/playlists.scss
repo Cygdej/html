@@ -119,6 +119,8 @@
   }
 
   &__card {
+    display: flex;
+    flex-direction: column;
     position: relative;
     cursor: pointer;
 
@@ -143,6 +145,8 @@
       position: relative;
       width: 160px;
       height: 160px;
+      flex-grow: 0;
+      flex-shrink: 0;
 
       img {
         width: 100%;
@@ -166,6 +170,7 @@
 
     &-info {
       padding: 15px;
+      flex-grow: 1;
       border: 1px solid #e6e8ec;
       transition: background-color 0.08s ease-in-out,
         border-color 0.08s ease-in-out;

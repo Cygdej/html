@@ -390,25 +390,22 @@ function clearSelect() {
 
 createSelect(options[0].innerHTML);
 
-// valdation input
+// valdation form input
 const inputName = document.querySelector(
     ".about-us__form .form-input[name='name']"
   ),
   inputEmail = document.querySelector(
     ".about-us__form .form-input[name='email']"
   ),
-  [nameError, emailError] = document.querySelectorAll(".about-us__error-label");
+  [nameError, emailError] = document.querySelectorAll(".about-us__error-label"),
+  submitBtn = document.querySelector(".about-us__btn"),
+  formCheckbox = document.querySelector("#checkmark");
 
 inputName.addEventListener("change", () => {
   const reg = /\d+/;
   if (reg.test(inputName.value)) {
-    console.log("Error");
     showError(inputName, nameError);
   }
-});
-
-inputName.addEventListener("input", () => {
-  hideError(inputName, nameError);
 });
 
 inputEmail.addEventListener("change", () => {
@@ -416,6 +413,10 @@ inputEmail.addEventListener("change", () => {
   if (!reg.test(inputEmail.value)) {
     showError(inputEmail, emailError);
   }
+});
+
+inputName.addEventListener("input", () => {
+  hideError(inputName, nameError);
 });
 
 inputEmail.addEventListener("input", () => {
@@ -431,6 +432,48 @@ function hideError(input, error) {
   error.classList.add("about-us__error-label--hidden");
   input.classList.remove("about-us__form-input--invalid");
 }
+
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (
+    (inputName.value != "") &
+    !inputName.classList.contains("about-us__form-input--invalid") &
+    (inputEmail.value != "") &
+    !inputEmail.classList.contains("about-us__form-input--invalid") &
+    formCheckbox.checked
+  ) {
+    alert("form has been submitted");
+    inputName.value = "";
+    inputEmail.value = "";
+    formCheckbox.checked = false;
+  } else {
+    alert("fill in the form");
+  }
+});
+
+// validation login input
+
+const loginInputs = document.querySelectorAll(".login__form-input"),
+  loginBtn = document.querySelector(".login__form-btn-submit");
+
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let error = false;
+
+  loginInputs.forEach((input) => {
+    if (input.value == "") {
+      error = true;
+    }
+  });
+  if (error) {
+    alert("fill in the form");
+  } else {
+    alert("form has been submitted");
+    loginInputs.forEach((input) => {
+      input.value = "";
+    });
+  }
+});
 
 // air menu
 

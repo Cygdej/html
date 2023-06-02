@@ -13,16 +13,12 @@
     padding-bottom: 94px;
 
     &::after {
-      content: "";
+      content: url(../img/curve.svg);
       position: absolute;
-      bottom: -7px;
+      bottom: -8px;
       left: calc((100vw - 100%) / 2 * -1);
       width: 100vw;
       height: 11px;
-      transform: scaleY(-1);
-      background: url(../img/curve.png);
-      background-size: contain;
-      background-repeat: repeat no-repeat;
     }
   }
 
@@ -30,7 +26,7 @@
     width: 160px;
     height: 20px;
     margin-bottom: 20px;
-    img {
+    svg {
       width: 100%;
       height: 100%;
     }

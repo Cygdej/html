@@ -174,7 +174,7 @@
     }
 
     &__card {
-      display: flex;
+      flex-direction: row;
 
       &-country {
         right: auto;
@@ -267,11 +267,6 @@
     &__socials-link:not(:last-child) {
       margin-right: 21px;
     }
-
-    &__content:after {
-      bottom: -15px;
-      transform: scale(2);
-    }
   }
   .hero {
     padding: 90px 0;
@@ -300,6 +295,10 @@
 
     &__grid {
       margin-bottom: 59px;
+    }
+
+    &__card-stats {
+      padding-bottom: 3px;
     }
   }
 }
@@ -631,12 +630,6 @@
 
     &__socials-link:not(:last-child) {
       margin-right: 24px;
-    }
-
-    &__content:after {
-      background-size: cover;
-      transform: scale(1.1) translateX(-10px);
-      bottom: -12px;
     }
   }
 }
@@ -1068,8 +1061,7 @@
       margin-bottom: 11px;
 
       &::after {
-        bottom: 0px;
-        transform: scale(1) translateX(0px);
+        bottom: 0;
       }
     }
 
@@ -1305,7 +1297,6 @@
 
       &-info {
         padding: 16px;
-        margin-bottom: 6px;
       }
 
       &-name {
@@ -1333,7 +1324,7 @@
       }
 
       &-stats {
-        padding: 0 0 7px 32px;
+        padding: 6px 0 7px 32px;
         font-size: 12px;
       }
 
@@ -1353,6 +1344,7 @@
       &-img {
         width: 100%;
         height: 72px;
+        min-height: auto;
 
         img {
           object-fit: fill;
@@ -1566,5 +1558,17 @@
 
   .col-9-xl {
     grid-column: span 9;
+  }
+}
+
+@media screen and (max-height: 655px) {
+  .login__window {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-height: 655px) and (max-width: 600px) {
+  .login__window {
+    margin-top: 0px;
   }
 }
