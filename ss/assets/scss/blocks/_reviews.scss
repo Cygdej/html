@@ -1,0 +1,15 @@
+.reviews {
+  .swiper {
+    &-slide {
+      width: auto;
+      opacity: 0.5;
+
+      &-active {
+        opacity: 1;
+      }
+    }
+    &-container {
+      overflow: visible;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.profile-page {
+  &__content {
+    padding-bottom: rem(73px);
+
+    @media #{$screen-laptop} {
+      padding-bottom: rem(100px);
+    }
+  }
+
+  &__main-block {
+    padding-bottom: rem(50px);
+
+    @media #{$screen-laptop} {
+      padding-bottom: rem(53px);
+    }
+
+    @media #{$screen-desktop} {
+      padding-bottom: rem(50px);
+    }
+  }
+
+  &__form {
+    padding-top: rem(20px);
+
+    @media #{$screen-laptop} {
+      padding-top: 0;
+    }
+  }
+}
