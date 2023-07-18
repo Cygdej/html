@@ -1,10 +1,6 @@
 /**
 * Colors
-*
-* Название переменной конкретного цвета генерируется через сервис: http://chir.ag/projects/name-that-color/.
-* Значение цвета всегда указывается в HEX-формате в нижнем регистре (кроме исключительных случаев).
 */
-// Пример указания цветов
 $bunker: #121920;
 $white: #ffffff;
 $slate-gray: #768298;
@@ -67,7 +63,6 @@ $font-weight-medium: 500;
 /**
 * Breakpoints
 */
-// Пример указания медиазапросов, затем можно использовать ее как '@media #{$screen-medium} {...}'
 $screen-desktop: "(min-width: 1280px)";
 $screen-laptop: "(min-width: 768px)";
 
