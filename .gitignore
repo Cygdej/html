@@ -9,6 +9,6 @@
 .DS_Store
 .idea/
 *.swp 
-app/
+/app
 public
-node_modules
+/node_modules
