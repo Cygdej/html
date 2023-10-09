@@ -1,0 +1,64 @@
+@import "../../assets/scss/_variables.scss";
+
+.subscribe {
+  padding-top: 130px;
+  padding-bottom: 60px;
+
+  background-color: $doughnut;
+  color: $white;
+
+  @media #{$screen-mobile} {
+    padding-top: 80px;
+    padding-bottom: 45px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  @media #{$screen-laptop} {
+    justify-content: normal;
+    flex-direction: column;
+  }
+
+  @media #{$screen-mobile} {
+    gap: 20px;
+  }
+}
+
+.text {
+  width: 430px;
+
+  font-family: $font-family-rubik;
+  font-size: 34px;
+  line-height: 42px;
+  letter-spacing: -1.02px;
+
+  @media #{$screen-mobile} {
+    width: 210px;
+
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.48px;
+  }
+}
+
+.form {
+  width: 670px;
+
+  @media #{$screen-mobile} {
+    width: 400px;
+    max-width: 100%;
+  }
+}
+
+.formControl {
+  width: 100%;
+  height: 80px;
+
+  @media #{$screen-mobile} {
+    height: 45px;
+  }
+}

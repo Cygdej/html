@@ -10,5 +10,4 @@
 .idea/
 *.swp 
 /app
-public
 /node_modules

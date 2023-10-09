@@ -1,0 +1,22 @@
+@import "../../assets/scss/_variables.scss";
+
+.comments {
+  padding: 65px 0;
+
+  background-color: $white-smoke;
+
+  @media #{$screen-mobile} {
+    padding: 22px 0;
+  }
+}
+
+.slider {
+  width: 100vw;
+
+  margin-top: 80px;
+  margin-left: calc(-50vw + 50%);
+
+  @media #{$screen-mobile} {
+    margin-top: 27px;
+  }
+}

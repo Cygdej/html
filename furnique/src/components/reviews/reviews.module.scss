@@ -1,0 +1,105 @@
+@import "../../assets/scss/_variables.scss";
+
+.section {
+  padding-top: 65px;
+  margin-bottom: -70px;
+
+  background-color: $white-smoke;
+
+  @media #{$screen-mobile} {
+    padding-top: 28px;
+    margin-bottom: -45px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media #{$screen-laptop} {
+    flex-direction: column-reverse;
+    justify-content: normal;
+    gap: 50px;
+  }
+
+  @media #{$screen-mobile} {
+    gap: 25px;
+  }
+}
+
+.slider {
+  width: 65%;
+
+  margin-left: -95px;
+
+  @media #{$screen-laptop} {
+    width: 100%;
+  }
+
+  @media #{$screen-mobile} {
+    margin-left: -26px;
+  }
+}
+
+.title {
+  align-items: flex-start;
+
+  width: 30%;
+  margin-top: 80px;
+
+  text-align: left;
+  @media #{$screen-laptop} {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.btns {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+
+  z-index: 10;
+
+  @media #{$screen-laptop} {
+    left: 95px;
+    top: 0;
+    right: auto;
+  }
+
+  @media #{$screen-mobile} {
+    left: 26px;
+  }
+}
+
+.btn {
+  padding: 6px;
+
+  @media #{$screen-mobile} {
+    padding: 4px;
+  }
+}
+
+.btnIcon {
+  width: $icon-regular;
+  height: $icon-regular;
+
+  @media #{$screen-mobile} {
+    width: $icon-small;
+    height: $icon-small;
+  }
+}
+
+.btnPrev {
+  margin-right: 25px;
+
+  @media #{$screen-mobile} {
+    margin-right: 13px;
+  }
+}
+
+.btnNext {
+  transform: rotate(180deg);
+}
