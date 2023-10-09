@@ -1,0 +1,21 @@
+.main-page {
+  &__announcements {
+    margin-bottom: rem(40px);
+
+    @media #{$screen-laptop} {
+      margin-bottom: rem(50px);
+    }
+
+    @media #{$screen-desktop} {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__about-us {
+    margin-bottom: rem(37px);
+
+    @media #{$screen-laptop} {
+      margin-bottom: rem(40px);
+    }
+  }
+}

@@ -1,0 +1,319 @@
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  height: rem(352px);
+
+  background-color: $white;
+
+  border-radius: rem($big-radius);
+
+  overflow: hidden;
+  filter: $double-shadow;
+
+  cursor: pointer;
+  transition: box-shadow $transition-duration $transition-function;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+
+  &:hover & {
+    &__text,
+    &__title {
+      color: $curious-blue;
+    }
+  }
+
+  &--img-top & {
+    &__text {
+      @include truncate-text-multiple-line(5);
+
+      @media #{$screen-laptop} {
+        @include truncate-text-multiple-line(4);
+      }
+    }
+
+    &__text,
+    &__title {
+      max-width: 100%;
+
+      transition: color $transition-duration $transition-function;
+
+      @media #{$screen-laptop} {
+        max-width: rem(230px);
+      }
+
+      @media #{$screen-desktop} {
+        max-width: rem(265px);
+      }
+    }
+  }
+
+  &--img-bg {
+    color: $white;
+
+    background: linear-gradient(rgba(18, 25, 32, 0.7), rgba(18, 25, 32, 0.7)),
+      url(../images/cards/chair-375px.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background $transition-duration $transition-function;
+
+    &:hover {
+      background: linear-gradient(rgba(18, 25, 32, 0.9), rgba(18, 25, 32, 0.9)),
+        url(../images/cards/chair-375px.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media #{$screen-laptop} {
+      background: linear-gradient(rgba(18, 25, 32, 0.7), rgba(18, 25, 32, 0.7)),
+        url(../images/cards/chair.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &:hover {
+      background: linear-gradient(rgba(18, 25, 32, 0.9), rgba(18, 25, 32, 0.9)),
+        url(../images/cards/chair.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &--img-bg:hover & {
+    &__text,
+    &__title {
+      color: $white;
+    }
+  }
+
+  &--img-bg & {
+    &__icon {
+      background-color: transparent;
+    }
+
+    &__btn {
+      color: $white;
+    }
+
+    &__content {
+      padding-top: rem(145px);
+
+      @media #{$screen-laptop} {
+        padding-top: rem(170px);
+      }
+    }
+
+    &__text {
+      @include truncate-text-multiple-line(4);
+      max-width: rem(525px);
+    }
+
+    &__text,
+    &__stats {
+      color: $white;
+    }
+  }
+
+  &--img-left {
+    @media #{$screen-laptop} {
+      flex-direction: row;
+    }
+  }
+
+  &--img-right {
+    @media #{$screen-laptop} {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--img-left,
+  &--img-right {
+    height: rem(415px);
+
+    @media #{$screen-laptop} {
+      height: rem(219px);
+    }
+  }
+
+  &--img-left &,
+  &--img-right & {
+    &__icon {
+      @media #{$screen-laptop} {
+        top: rem(15px);
+        right: rem(20px);
+
+        width: rem($icon-width-meduim);
+        height: rem($icon-height-meduim);
+        padding: 0;
+      }
+    }
+
+    &__img {
+      height: rem(205px);
+
+      @media #{$screen-laptop} {
+        width: rem(229px);
+        height: 100%;
+      }
+
+      @media #{$screen-desktop} {
+        width: rem(392px);
+      }
+    }
+
+    &__content {
+      padding: rem(20px);
+      padding-bottom: rem(15px);
+      @media #{$screen-laptop} {
+        position: relative;
+
+        padding: rem(15px) rem(20px);
+      }
+    }
+
+    &__title {
+      margin-bottom: rem(12px);
+    }
+
+    &__text {
+      @include truncate-text-multiple-line(3);
+
+      @media #{$screen-laptop} {
+        @include truncate-text-multiple-line(2);
+      }
+    }
+
+    &__text,
+    &__title {
+      max-width: 100%;
+
+      @media #{$screen-laptop} {
+        max-width: rem(585px);
+      }
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+
+    width: 100%;
+    height: rem(159px);
+
+    &-pic {
+      width: 100%;
+      height: 100%;
+
+      object-fit: fill;
+
+      @media #{$screen-laptop} {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: rem(35px);
+    height: rem(35px);
+
+    padding: rem(5px);
+
+    color: $curious-blue;
+    background-color: $white;
+
+    border-bottom-left-radius: rem($big-radius);
+  }
+
+  &__btn {
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    color: $curious-blue;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: rem(20px);
+    padding-bottom: rem(15px);
+
+    @media #{$screen-laptop} {
+      padding: rem(12px) rem(21px);
+    }
+  }
+
+  &__title {
+    @include truncate-text-multiple-line(2);
+
+    margin-bottom: rem(7px);
+
+    font-size: rem($font-size-base);
+    line-height: rem($line-height-regular);
+    transition: color $transition-duration $transition-function;
+
+    @media #{$screen-laptop} {
+      margin-bottom: rem(12px);
+      font-size: rem(18px);
+    }
+  }
+
+  &__text {
+    font-size: rem($font-size-tiny);
+    line-height: rem(21px);
+
+    color: $grey-color-text;
+    transition: color $transition-duration $transition-function;
+  }
+
+  &__stats {
+    margin-top: auto;
+
+    color: $grey-color-text;
+  }
+
+  &__list {
+    display: none;
+
+    margin-bottom: rem(15px);
+
+    @media #{$screen-laptop} {
+      display: flex;
+    }
+  }
+
+  &__item {
+    padding: 0 rem(5px);
+
+    border-right: rem(1px) solid $heather;
+
+    &:last-child {
+      padding-right: 0;
+      border: none;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &__link {
+    font-size: rem($font-size-miniture);
+
+    color: $curious-blue;
+  }
+}
