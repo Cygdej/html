@@ -1,0 +1,62 @@
+@import "../../assets/scss/_variables.scss";
+
+.link {
+  transition: all $transition-regular ease-in-out;
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.black {
+  color: $dark-ink;
+
+  &:hover {
+    color: $deep-orange;
+  }
+}
+
+.white {
+  color: $white-smoke;
+
+  &:hover {
+    color: $dark-ink;
+  }
+}
+
+.orange {
+  color: $deep-orange;
+
+  &:hover {
+    color: $dark-ink;
+  }
+}
+
+.blue {
+  color: $iris;
+
+  &:hover {
+    color: $deep-orange;
+  }
+}
+
+.filledWhite {
+  background-color: $white;
+
+  &:hover {
+    background-color: $iris;
+    color: $white;
+  }
+}
+
+.filledGray {
+  background-color: $coronation;
+
+  &:hover {
+    background-color: $deep-orange;
+    color: $white;
+  }
+}
+
+.borderBlue {
+  border: 1px solid $iris;
+}

@@ -1,0 +1,44 @@
+@import "../../assets/scss/_variables.scss";
+
+.header {
+  position: relative;
+  flex-shrink: 0;
+
+  padding: 26px 0;
+
+  border-bottom: 1px solid $pixel-white;
+
+  color: $dark-ink;
+
+  @media #{$screen-mobile} {
+    padding-top: 37px;
+    padding-bottom: 24px;
+
+    border: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.colMenu {
+  width: 66%;
+
+  margin-left: auto;
+
+  @media #{$screen-laptop} {
+    width: auto;
+  }
+}
+
+.icon {
+  width: $icon-medium;
+  height: $icon-medium;
+
+  @media #{$screen-mobile} {
+    width: $icon-regular;
+    height: $icon-regular;
+  }
+}

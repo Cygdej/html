@@ -1,0 +1,72 @@
+@import "../../assets/scss/_variables.scss";
+
+.card {
+  width: $category-width-desktop;
+  height: $category-height-desktop;
+
+  padding-top: 50px;
+  padding-left: 40px;
+
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 0px;
+
+  @media #{$screen-mobile} {
+    width: $category-width-mobile;
+    height: $category-height-mobile;
+
+    padding-top: 43px;
+    padding-left: 34px;
+
+    background-size: 155px 160px;
+  }
+}
+
+.chair {
+  background-image: url("../../assets/img/categories/chair.png");
+}
+
+.sofa {
+  background-image: url("../../assets/img/categories/sofa.png");
+}
+
+.bookcase {
+  background-image: url("../../assets/img/categories/bookcase.png");
+}
+
+.grey {
+  background-color: $white-smoke;
+}
+
+.indigo {
+  background-color: $blanche;
+}
+
+.derby {
+  background-color: $flowerbed;
+}
+
+.title {
+  margin-bottom: 15px;
+
+  color: $dark-ink;
+
+  @media #{$screen-mobile} {
+    margin-bottom: 10px;
+  }
+}
+
+.link {
+  display: inline-block;
+  padding: 6px 18px;
+
+  font-family: $font-family-rubik;
+  font-size: 20px;
+  line-height: 28px;
+
+  @media #{$screen-mobile} {
+    padding: 5px 15px;
+
+    font-size: 17px;
+    line-height: 23px;
+  }
+}

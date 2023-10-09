@@ -1,0 +1,222 @@
+@import "../../assets/scss/_variables.scss";
+
+.comment {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+  width: 620px;
+  padding: 42px;
+
+  background-color: $white;
+
+  @media #{$screen-mobile} {
+    gap: 9px;
+    width: 240px;
+    padding: 14px;
+  }
+}
+
+.review {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  width: 100%;
+
+  padding-left: 95px;
+
+  @media #{$screen-laptop} {
+    padding-top: 50px;
+  }
+
+  @media #{$screen-mobile} {
+    padding-top: 35px;
+    padding-left: 26px;
+
+    gap: 11px;
+  }
+}
+
+.icon {
+  display: block;
+
+  width: 55px;
+  height: 39px;
+
+  color: $iris;
+
+  @media #{$screen-mobile} {
+    width: 19px;
+    height: 13px;
+
+    color: $deep-orange;
+  }
+}
+
+.reviewIcon {
+  position: absolute;
+  right: 0;
+  bottom: 220px;
+
+  width: 210px;
+  height: 150px;
+
+  @media #{$screen-laptop} {
+    top: 0px;
+    bottom: auto;
+
+    width: 150px;
+    height: 100px;
+  }
+
+  @media #{$screen-mobile} {
+    width: 63px;
+    height: 45px;
+  }
+}
+
+.text {
+  color: $gray;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.36px;
+
+  @media #{$screen-mobile} {
+    font-size: 7px;
+    line-height: 11px;
+    letter-spacing: 0;
+  }
+}
+
+.reviewText {
+  max-width: 65%;
+
+  @media #{$screen-laptop} {
+    max-width: 100%;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  @media #{$screen-mobile} {
+    gap: 4px;
+  }
+}
+
+.personPic {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  @media #{$screen-mobile} {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.personImg {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.personName {
+  color: $dark-ink;
+
+  font-family: $font-family-rubik;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+
+  @media #{$screen-mobile} {
+    font-size: 6px;
+    line-height: 10px;
+    letter-spacing: -0.1px;
+  }
+}
+
+.personInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.personPosition {
+  color: $dark-ink;
+
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.32px;
+
+  @media #{$screen-mobile} {
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.2px;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+
+  @media #{$screen-mobile} {
+    gap: 2px;
+  }
+}
+
+.star {
+  display: block;
+
+  width: $icon-medium;
+  height: $icon-medium;
+
+  @media #{$screen-mobile} {
+    width: $icon-tiny;
+    height: $icon-tiny;
+  }
+}
+
+.starImg {
+  width: 100%;
+  height: 100%;
+}
+
+.productPic {
+  position: relative;
+
+  max-width: 820px;
+  height: 275px;
+
+  margin-left: -95px;
+
+  z-index: 10;
+
+  @media #{$screen-mobile} {
+    max-width: 450px;
+    height: 120px;
+
+    margin-left: -26px;
+  }
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+}

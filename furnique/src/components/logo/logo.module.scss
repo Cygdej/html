@@ -1,0 +1,16 @@
+@import "../../assets/scss/_variables.scss";
+
+.logo {
+  width: $logo-width-desktop;
+  height: $logo-height-desktop;
+
+  @media #{$screen-mobile} {
+    width: $logo-width-mobile;
+    height: $logo-height-mobile;
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
