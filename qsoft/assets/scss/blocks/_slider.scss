@@ -1,0 +1,89 @@
+.slider {
+  &__box {
+    position: relative;
+  }
+
+  &__btns {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    max-width: rem($container-width + 2 * $gap-container);
+    height: 0;
+    margin: 0 auto 0;
+    padding: 0 rem($gap-container);
+
+    @media #{$screen-laptop} {
+      display: block;
+    }
+
+    &-item {
+      width: auto;
+      height: auto;
+
+      &::after {
+        content: "";
+      }
+    }
+  }
+  &__btn {
+    width: rem(36px);
+    height: rem(36px);
+
+    padding: rem(6px);
+
+    box-shadow: 0px 4px 12px 0px rgba(38, 94, 107, 0.25);
+    border-radius: 50%;
+
+    color: $dark-color-text;
+    background-color: $white;
+
+    transition: color $transition-duration $transition-function,
+      background-color $transition-duration $transition-function;
+
+    &:hover {
+      color: $white;
+      background-color: $goldenrod;
+    }
+
+    @media #{$screen-desktop} {
+      width: rem(48px);
+      height: rem(48px);
+    }
+
+    &--next {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-container:has(&__pagination) {
+    @media #{$screen-desktop} {
+      padding-bottom: 30px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: rem(9px);
+    height: rem(9px);
+  }
+
+  .swiper-pagination-bullets {
+    bottom: 0px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $magenta-red;
+  }
+
+  &__pagination {
+    display: none;
+
+    @media #{$screen-desktop} {
+      display: block;
+    }
+  }
+}

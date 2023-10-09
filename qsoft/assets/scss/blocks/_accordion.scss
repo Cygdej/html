@@ -1,0 +1,86 @@
+.accordion {
+  &__title {
+    margin-bottom: rem(24px);
+  }
+
+  &__item {
+    padding: rem(20px) rem(16px);
+    border-radius: rem(12px);
+    background-color: $athens-gray;
+    &:not(:last-child) {
+      margin-bottom: rem(16px);
+    }
+  }
+  &__item--open & {
+    &__item-title,
+    &__btn {
+      color: $cerise-red;
+    }
+    &__btn {
+      transform: rotate((180deg));
+    }
+  }
+
+  &__header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    cursor: pointer;
+  }
+
+  &__item-title {
+    margin-right: rem(16px);
+
+    font-weight: $font-weight-medium;
+    font-size: rem($font-size-tiny);
+    line-height: rem(20px);
+
+    transition: color $transition-duration $transition-function;
+
+    @media #{$screen-desktop} {
+      margin-right: rem(35px);
+
+      font-size: rem($font-size-base);
+      line-height: rem($line-height-tiny);
+    }
+  }
+
+  &__btn {
+    padding: rem(4px);
+    transition: transform $transition-duration $transition-function;
+  }
+
+  &__body {
+    display: none;
+
+    margin-top: rem(12px);
+    padding-top: rem(12px);
+
+    border-top: 1px solid $gainsboro;
+
+    @media #{$screen-laptop} {
+      margin-top: rem(16px);
+    }
+
+    @media #{$screen-desktop} {
+      margin-top: rem(36px);
+      margin-right: rem(40px);
+      padding-top: rem(12px);
+    }
+  }
+
+  &__text {
+    font-weight: $font-weight-medium;
+    font-size: rem($font-size-miniture);
+    line-height: rem(16px);
+
+    color: black;
+
+    @media #{$screen-desktop} {
+      font-size: rem($font-size-tiny);
+      line-height: rem(22px);
+    }
+  }
+}

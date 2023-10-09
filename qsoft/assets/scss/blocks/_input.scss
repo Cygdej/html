@@ -1,0 +1,130 @@
+.input {
+  font-size: rem($font-size-tiny);
+  color: $dark-color-text;
+
+  &--regular &__control {
+    height: rem($input-height-medium);
+
+    padding: 0 rem(17px);
+
+    @media #{$screen-laptop} {
+      max-width: rem($input-width-regular);
+    }
+  }
+
+  &--medium &__control {
+    height: rem($input-height-medium);
+
+    padding: 0 rem(17px);
+
+    @media #{$screen-laptop} {
+      max-width: rem($input-width-medium);
+    }
+  }
+
+  &--big &__control {
+    height: rem($input-height-small);
+
+    padding: 0 rem(30px);
+
+    @media #{$screen-laptop} {
+      max-width: rem($input-width-huge);
+      padding: 0 rem(40px);
+    }
+  }
+
+  &--search {
+    position: relative;
+  }
+
+  &--search &__control {
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @media #{$screen-laptop} {
+      border: rem(1px) solid $heather;
+
+      &:focus-visible {
+        outline: rem(1px) solid $bunker;
+      }
+    }
+  }
+
+  &--required &__label::after {
+    content: "*";
+    color: $error-color;
+  }
+
+  &--disabled & {
+    &__label {
+      color: $placeholder-color;
+    }
+
+    &__control {
+      border: none;
+      background-color: $disabled-color;
+    }
+  }
+
+  &--textarea &__control {
+    height: rem($input-height-big);
+
+    padding: rem(17px);
+    resize: none;
+
+    @media #{$screen-laptop} {
+      max-width: rem($input-width-big);
+    }
+  }
+
+  &--select &__control {
+    max-width: rem($input-width-regular);
+  }
+
+  &--select-medium &__control {
+    max-width: 100%;
+
+    @media #{$screen-laptop} {
+      max-width: rem($input-width-medium);
+    }
+  }
+
+  &__label {
+    color: inherit;
+  }
+
+  &__control {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    border: rem(1px) solid $heather;
+    border-radius: rem($medium-radius);
+
+    transition: border $transition-duration $transition-function;
+
+    &::placeholder {
+      color: $heather;
+    }
+
+    &:focus-visible {
+      outline: rem(1px) solid $bunker;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: rem(7px);
+    left: 0;
+
+    color: $slate-gray;
+
+    @media #{$screen-laptop} {
+      left: rem(7px);
+    }
+  }
+}
