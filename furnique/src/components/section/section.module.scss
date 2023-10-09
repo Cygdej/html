@@ -1,0 +1,61 @@
+@import "../../assets/scss/_variables.scss";
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: center;
+
+  @media #{$screen-mobile} {
+    gap: 8px;
+  }
+}
+
+.titleLink {
+  padding: 4px 24px;
+
+  font-family: $font-family-rubik;
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  line-height: 26px;
+  letter-spacing: -0.36px;
+
+  @media #{$screen-mobile} {
+    padding: 2px 12px;
+
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: -0.2px;
+  }
+}
+
+.titleMain {
+  color: $dark-ink;
+}
+
+.titleH1 {
+  max-width: 800px;
+
+  margin-bottom: 10px;
+
+  @media #{$screen-mobile} {
+    margin-bottom: 8px;
+  }
+}
+
+.titleSub {
+  max-width: 450px;
+
+  color: $gray;
+
+  font-size: 18px;
+  line-height: 26px;
+
+  @media #{$screen-mobile} {
+    font-size: 10px;
+    line-height: 13px;
+  }
+}

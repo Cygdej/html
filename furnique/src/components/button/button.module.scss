@@ -1,0 +1,98 @@
+@import "../../assets/scss/_variables.scss";
+
+.btn {
+  display: flex;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  transition: all $transition-regular ease-in-out;
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.medium {
+  padding: 12px 28px;
+
+  @media #{$screen-mobile} {
+    padding: 6px 15px;
+  }
+}
+
+.white {
+  color: $white;
+
+  &:hover {
+    color: $deep-orange;
+  }
+}
+
+.orange {
+  color: $deep-orange;
+
+  &:hover {
+    color: $doughnut;
+  }
+}
+
+.black {
+  color: $dark-ink;
+
+  &:hover {
+    color: $deep-orange;
+  }
+}
+
+.filledWhite {
+  background-color: $white;
+
+  &:hover {
+    background-color: $blanche;
+    color: $iris;
+  }
+}
+
+.filledBlue {
+  background-color: $iris;
+
+  &:hover {
+    background-color: $deep-orange;
+    color: $white;
+  }
+}
+
+.filledOrange {
+  background-color: $deep-orange;
+
+  &:hover {
+    background-color: $iris;
+    color: $white;
+  }
+}
+
+.borderGray {
+  border: 1px solid $pixel-white;
+
+  &:hover {
+    border-color: $iris;
+  }
+}
+
+.rounded {
+  border-radius: 32px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.withIcon {
+  display: flex;
+  align-items: center;
+}
