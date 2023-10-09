@@ -1,0 +1,130 @@
+.btn {
+  padding: 0;
+
+  font-weight: $font-weight-medium;
+  font-size: rem($font-size-tiny);
+  line-height: rem(18px);
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  &--medium {
+    width: rem(24px);
+    height: rem(24px);
+  }
+
+  &--filled {
+    color: $white;
+
+    &-small {
+      padding: rem(6px) rem(30px);
+    }
+
+    &-medium {
+      padding: rem(14px) rem(25px);
+    }
+
+    &-big {
+      padding: rem(14px) rem(30px);
+    }
+
+    &-blue {
+      background-color: $curious-blue;
+      transition: opacity $transition-duration $transition-function,
+        background-color $transition-duration $transition-function;
+
+      &:hover {
+        background-color: $wild-blue-yonder;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    &:disabled {
+      background-color: $athens-gray;
+    }
+  }
+
+  &--simple {
+    &-blue {
+      color: $curious-blue;
+      transition: opacity $transition-duration $transition-function,
+        color $transition-duration $transition-function;
+
+      &:hover {
+        color: $wild-blue-yonder;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    &-grey {
+      color: $slate-gray;
+    }
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--red {
+    color: $bunker;
+    background-color: $white;
+    transition: color $transition-duration $transition-function;
+
+    &:hover,
+    &:focus {
+      color: $cerise-red;
+    }
+  }
+
+  &--rounded-corner {
+    border-top-left-radius: rem($medium-radius);
+    border-bottom-right-radius: rem($medium-radius);
+  }
+
+  &--full-rounded {
+    border-radius: rem($medium-radius);
+  }
+
+  &--with-icon {
+    display: flex;
+    align-items: center;
+    gap: rem(10px);
+  }
+
+  &__icon {
+    display: block;
+    &--regular {
+      width: rem($icon-width-regular);
+      height: rem($icon-height-regular);
+    }
+
+    &--medium {
+      width: rem($icon-width-meduim);
+      height: rem($icon-height-meduim);
+    }
+
+    &--tiny {
+      width: rem($icon-width-tiny);
+      height: rem($icon-height-tiny);
+    }
+
+    &--small {
+      width: rem($icon-width-small);
+      height: rem($icon-height-small);
+    }
+  }
+
+  &:disabled {
+    color: $heather;
+
+    cursor: auto;
+  }
+}

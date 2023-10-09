@@ -1,0 +1,36 @@
+.faq {
+  &__main-block {
+    padding: rem(50px) rem(20px);
+
+    @media #{$screen-laptop} {
+      padding: rem(50px) rem(40px);
+    }
+
+    @media #{$screen-desktop} {
+      padding: rem(50px) rem(75px);
+    }
+  }
+
+  &__accordion {
+    & + & {
+      margin-top: rem(56px);
+
+      @media #{$screen-desktop} {
+        margin-top: rem(40px);
+      }
+    }
+  }
+
+  &__help-btn {
+    width: fit-content;
+    margin-top: rem(80px);
+  }
+
+  &__reviews {
+    margin-top: rem(100px);
+
+    @media #{$screen-laptop} {
+      margin-top: rem(130px);
+    }
+  }
+}

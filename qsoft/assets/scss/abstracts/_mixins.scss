@@ -1,0 +1,81 @@
+@mixin object-fit($fit: fill, $position: null) {
+  -o-object-fit: $fit;
+  object-fit: $fit;
+
+  @if $position {
+    font-family: "object-fit: #{$fit}; object-position: #{$position}";
+
+    -o-object-position: $position;
+    object-position: $position;
+  } @else {
+    font-family: "object-fit: #{$fit}";
+  }
+}
+
+@mixin blue-link-interaction {
+  transition: 0.1s ease-in-out border, 0.1s ease-in-out opacity;
+  &:hover {
+    border-bottom: rem(1px) solid $curious-blue;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@mixin huge-title {
+  font-weight: $font-weight-medium;
+  font-size: rem($font-size-large);
+  line-height: rem($line-height-large);
+
+  @media #{$screen-laptop} {
+    font-size: rem($font-size-huge);
+    line-height: rem($font-size-huge);
+  }
+}
+
+@mixin large-title {
+  font-weight: $font-weight-medium;
+  font-size: rem($font-size-medium);
+  line-height: rem($line-height-medium);
+
+  @media #{$screen-laptop} {
+    font-size: rem($font-size-large);
+    line-height: rem($line-height-large);
+  }
+}
+
+@mixin medium-title {
+  font-weight: $font-weight-medium;
+  font-size: rem(20px);
+  line-height: rem($line-height-tiny);
+
+  @media #{$screen-laptop} {
+    font-size: rem($font-size-medium);
+    line-height: rem($line-height-medium);
+  }
+}
+
+@mixin small-title {
+  font-weight: $font-weight-medium;
+  font-size: rwm($font-size-base);
+  line-height: rem($line-height-tiny);
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin truncate-text-single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin truncate-text-multiple-line($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}

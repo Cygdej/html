@@ -1,0 +1,6 @@
+.container {
+  width: 100%;
+  max-width: rem($container-width + 2 * $gap-container);
+  margin: 0 auto;
+  padding: 0 rem($gap-container);
+}

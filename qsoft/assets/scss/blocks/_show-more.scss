@@ -1,0 +1,26 @@
+.show-more {
+  &--open & {
+    &__text {
+      display: block;
+    }
+    &__icon {
+      transform: rotate(180deg);
+    }
+
+    &__btn {
+      margin-top: rem(10px);
+    }
+  }
+
+  &__text {
+    display: none;
+    & + & {
+      margin-top: rem(10px);
+    }
+  }
+
+  &__icon {
+    color: $cerise-red;
+    transition: transform $transition-duration $transition-function;
+  }
+}

@@ -1,0 +1,71 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(53px);
+
+      @media #{$screen-laptop} {
+        margin-bottom: rem(50px);
+      }
+    }
+
+    &--inputs {
+      & > *:not(:last-child) {
+        margin-bottom: rem(24px);
+      }
+    }
+
+    &--inputs > &-title {
+      margin-bottom: rem(17px);
+
+      @media #{$screen-laptop} {
+        margin-bottom: rem(15px);
+      }
+    }
+
+    &--checkboxes,
+    &--radios {
+      & > *:not(:last-child) {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &--checkboxes > &-title,
+    &--radios > &-title {
+      margin-bottom: rem(25px);
+
+      @media #{$screen-laptop} {
+        margin-bottom: rem(20px);
+      }
+    }
+  }
+
+  &__section-title {
+    font-size: rem($font-size-medium);
+    line-height: rem($line-height-tiny);
+
+    @media #{$screen-laptop} {
+      line-height: rem($line-height-medium);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: rem(48px);
+
+    @media #{$screen-laptop} {
+      justify-content: initial;
+
+      margin-left: auto;
+
+      gap: rem(20px);
+    }
+  }
+}

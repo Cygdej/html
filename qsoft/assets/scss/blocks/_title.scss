@@ -1,0 +1,14 @@
+.title {
+  &--h1 {
+    @include huge-title;
+  }
+  &--h2 {
+    @include large-title;
+  }
+  &--h3 {
+    @include medium-title;
+  }
+  &--h4 {
+    @include small-title;
+  }
+}

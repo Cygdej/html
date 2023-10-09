@@ -1,0 +1,64 @@
+.announcement {
+  display: flex;
+  flex-direction: column;
+
+  width: rem($announcement-card-width);
+  height: rem($announcement-card-height);
+
+  border-radius: rem($medium-radius);
+  background-color: $white;
+
+  filter: $double-shadow;
+
+  &__content {
+    position: relative;
+
+    padding: rem(16px);
+  }
+
+  &__icon {
+    position: absolute;
+    top: rem(16px);
+    right: rem(16px);
+
+    width: rem($icon-width-meduim);
+    height: rem($icon-height-meduim);
+
+    &--red {
+      color: $cerise-red;
+    }
+
+    &--blue {
+      color: $curious-blue;
+    }
+
+    &--dark-blue {
+      color: $wild-blue-yonder;
+    }
+  }
+
+  &__title {
+    @include truncate-text-single-line;
+
+    max-width: rem(225px);
+
+    margin-bottom: rem(10px);
+  }
+
+  &__text {
+    @include truncate-text-multiple-line(3);
+
+    font-size: rem($font-size-tiny);
+    line-height: rem(18px);
+  }
+
+  &__list {
+    display: flex;
+    column-gap: rem(15px);
+
+    align-self: flex-end;
+    align-items: center;
+
+    margin-top: auto;
+  }
+}

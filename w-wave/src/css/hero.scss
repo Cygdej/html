@@ -1,0 +1,92 @@
+.hero {
+  padding: 94px 0;
+  color: $dark-text;
+  background-color: transparent;
+  background-image: url(../img/hero/microphone.png);
+  background-size: 350px 382px;
+  background-position: calc(760px + (100vw - 1110px) / 2) 30px;
+  background-repeat: no-repeat;
+
+  &__content {
+    max-width: 635px;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 60px;
+    line-height: 60px;
+
+    span {
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+
+  &__desr {
+    margin-bottom: 43px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1110px) {
+  .hero {
+    padding: 90px 0;
+    background-size: 256px 262px;
+    background-position: 87% center;
+
+    &__title {
+      margin-bottom: 16px;
+    }
+
+    &__content {
+      max-width: 540px;
+    }
+
+    &__desr {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    background: none;
+  }
+}
+
+@media (max-width: 770px) {
+  .hero {
+    &__content {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 41px 0;
+
+    &__title {
+      font-size: 32px;
+      line-height: 32px;
+      margin-bottom: 8px;
+    }
+
+    &__desr {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &__link {
+      font-size: 16px;
+      padding: 15px 45px;
+    }
+  }
+}
